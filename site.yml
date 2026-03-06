@@ -1,0 +1,12 @@
+- name: Prepare Kubernetes nodes
+  hosts: k8s_all
+  become: true
+  roles:
+    - common
+    - containerd
+    - kubernetes
+- name: Prep metal3 node
+  hosts: metal3_nodes
+  become: true
+  roles:
+    - common
